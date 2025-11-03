@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newsfeed-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: newsfeed-app
+  template:
+    metadata:
+      labels:
+        app: newsfeed-app
+    spec:
+      containers:
+      - name: newsfeed-container
+        image: newsfeed-app
+        imagePullPolicy: Never   # 👈 This line ensures Kubernetes uses your local Minikube image
+        ports:
+        - containerPort: 80
