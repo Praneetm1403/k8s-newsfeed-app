@@ -11,7 +11,7 @@ A simple Node.js application containerized with Docker and deployed to Kubernete
 
 ## 🧠 Commands to Run Locally
 
-### 1. Start Minikube
+
 ```bash
 minikube start
 
