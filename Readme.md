@@ -14,3 +14,11 @@ A simple Node.js application containerized with Docker and deployed to Kubernete
 ### 1. Start Minikube
 ```bash
 minikube start
+
+minikube image build -t newsfeed-app .
+
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+
+minikube service newsfeed-service
+
